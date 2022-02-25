@@ -1,0 +1,132 @@
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  // overflow: auto;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+// Card
+%card {
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  padding: 1.4rem;
+  margin: 0.5rem;
+}
+.card-light {
+  @extend %card;
+  background-color: #fff;
+  color: #333;
+}
+.card-dark {
+  @extend %card;
+  background-color: $light-color;
+  color: #333;
+}
+
+// Button style
+%btn {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 0.7rem 2rem;
+  margin: 0.5rem 0;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s;
+  &:hover {
+    transform: scale(0.95);
+  }
+}
+.btn-primary {
+  @extend %btn;
+  @include set-background(lighten($primary-color, 10%));
+}
+
+.btn-secondary {
+  @extend %btn;
+  @include set-background($secondary-color);
+}
+
+// Alerts
+%alert {
+  padding: 1rem;
+  margin: 1rem 0;
+  i {
+    margin-right: 0.5rem;
+  }
+}
+.alert-success {
+  @extend %alert;
+  @include set-background($alert-color);
+}
+// .alert-error {}
+
+// Padding
+.py {
+  &-1 {
+    padding: 1rem 0;
+  }
+  &-2 {
+    padding: 2rem 0;
+  }
+  &-3 {
+    padding: 3rem 0;
+  }
+  &-4 {
+    padding: 4rem 0;
+  }
+}
+
+// Margin
+.my {
+  &-1 {
+    margin: 1rem 0;
+  }
+  &-2 {
+    margin: 2rem 0;
+  }
+  &-3 {
+    margin: 3rem 0;
+  }
+  &-4 {
+    margin: 4rem 0;
+  }
+}
+
+// Text
+
+.lead {
+  font-size: 1.2rem;
+}
+.text {
+  &-center {
+    text-align: center;
+  }
+  &-primary {
+    color: #c93d1b;
+  }
+
+  &-xlg {
+    font-size: 4rem;
+  }
+  &-lg {
+    font-size: 3rem;
+  }
+  &-md {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,102 @@
+@media (max-width: 800px) {
+  #showcase .grid,
+  #home-a .grid,
+  #home-b .grid,
+  #home-c .grid,
+  #features-header .grid,
+  #features-subhead .grid,
+  #features-main .grid,
+  #docs-header .grid,
+  #docs-main .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  #showcase {
+    height: auto;
+    .grid {
+      .showcase-text {
+        text-align: center;
+        margin-top: 2rem;
+      }
+      .showcase-form {
+        justify-self: center;
+      }
+    }
+  }
+  #home-b {
+    .grid {
+      & > *:first-child {
+        grid-column: auto;
+        grid-row: auto;
+      }
+    }
+  }
+  #features-header,
+  #features-subhead,
+  #docs-header {
+    text-align: center;
+    img {
+      justify-self: center;
+    }
+  }
+  #features-main {
+    .grid {
+      & > *:nth-child(1) {
+        grid-column: auto;
+      }
+      & > *:nth-child(2) {
+        grid-column: auto;
+      }
+    }
+  }
+}
+
+// Mobile
+@media (max-width: 500px) {
+  #navbar {
+    .flex {
+      flex-direction: column;
+      ul {
+        @include set-background(lighten($primary-color, 3%));
+        padding: 0.4rem;
+        a {
+          padding-bottom: 0.2rem;
+        }
+      }
+    }
+  }
+  #showcase {
+    .grid {
+      .showcase-form {
+        width: 300px;
+        animation: slideInFromBottom 1s forwards ease-out;
+      }
+      .showcase-text {
+        animation: slideInFromTop 1s forwards ease-out;
+      }
+    }
+  }
+  #home-a {
+    animation: none;
+  }
+  #main-footer {
+    .grid {
+      text-align: center;
+      grid-template-columns: 1fr;
+      .social {
+        justify-self: center;
+      }
+    }
+  }
+}
+
+// Iphone 5
+@media (max-width: 350px) {
+  #showcase {
+    .grid {
+      .showcase-form {
+        width: 270px;
+      }
+    }
+  }
+}
